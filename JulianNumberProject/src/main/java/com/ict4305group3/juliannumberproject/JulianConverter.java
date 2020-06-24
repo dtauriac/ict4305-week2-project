@@ -25,6 +25,7 @@ public class JulianConverter {
                 - (3 * ((year + 4900 + (month - 14) / 12) / 100)) 
                 / 4 + day - 32075;
         return JulianNumber;
+        
     }
 
     /**
@@ -51,6 +52,7 @@ public class JulianConverter {
         year = gregorian[2];
 
         return gregorian;
+        
     }
 
 }
