@@ -10,5 +10,6 @@ package com.ict4305group3.juliannumberproject;
  * @author ipiesh
  */
 public class JulianNumberConverter {
+    int x=0;
     
 }
