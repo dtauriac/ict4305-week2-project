@@ -50,7 +50,22 @@ public class JulianConverterTest {
      */
     @Test
     public void testFromJulianNumber() {
-        //put test here
+        
+       JulianConverter myObject = new JulianConverter();
+        
+        int[] expectedResult1 = {1, 2, 1957};
+        int[] actualResult1 = myObject.fromJulianNumber(2435871);
+        int[] expectedResult2 = {5, 1, 50};
+        int[] actualResult2 = myObject.fromJulianNumber(1739327);
+        int[] expectedResult3 = {15, 3, 1492};
+        int[] actualResult3 = myObject.fromJulianNumber(2266076);
+        int[] expectedResult4 = {5, 12, 2050};
+        int[] actualResult4 = myObject.fromJulianNumber(2470166);
+        
+        assertEquals(expectedResult1,actualResult1);
+        assertEquals(expectedResult2,actualResult2);
+        assertEquals(expectedResult3,actualResult3);
+        assertEquals(expectedResult4,actualResult4);
     }
     
 }
