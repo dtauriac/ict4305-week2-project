@@ -32,15 +32,15 @@ public class JulianConverterTest {
         
         int expectedResult1 = 2435871;
         int actualResult1 = myObject.toJulianNumber(1, 2, 1957);
-//        int expectedResult2 = 1739327;
-//        int actualResult2 = myObject.toJulianNumber(5, 1, 0050);
+        int expectedResult2 = 1739327;
+        int actualResult2 = myObject.toJulianNumber(5, 1, 50);
         int expectedResult3 = 2266076;
         int actualResult3 = myObject.toJulianNumber(15, 3, 1492);
         int expectedResult4 = 2470166;
         int actualResult4 = myObject.toJulianNumber(25, 12, 2050);
         
         assertEquals(expectedResult1,actualResult1);
-//        assertEquals(expectedResult2,actualResult2);
+        assertEquals(expectedResult2,actualResult2);
         assertEquals(expectedResult3,actualResult3);
         assertEquals(expectedResult4,actualResult4);
     }
