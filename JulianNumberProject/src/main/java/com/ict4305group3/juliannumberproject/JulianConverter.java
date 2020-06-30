@@ -16,7 +16,7 @@ public class JulianConverter {
      * @param day
      * @param month
      * @param year
-     * @return Julian date
+     * @return int Julian date
      */
     public static int toJulianNumber(int day, int month, int year){
 
@@ -30,7 +30,7 @@ public class JulianConverter {
     /**
      *
      * @param JulianNumber
-     * @return Gregorian Date
+     * @return int[] Gregorian Date { day, month, year }
      */
     public static int[] fromJulianNumber(int JulianNumber) {
 
@@ -45,10 +45,7 @@ public class JulianConverter {
         int month = j + 2 - (12 * l);
         int year = 100 * (n - 49) + i + l;
 
-        int[] gregorian = new int[3];
-        day = gregorian[0];
-        month = gregorian[1];
-        year = gregorian[2];
+        int[] gregorian = { day, month, year };
 
         return gregorian;        
     }
