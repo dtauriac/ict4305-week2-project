@@ -11,18 +11,43 @@ package com.ict4305group3.juliannumberproject;
  */
 public class Date {
     
-    private int myJulianNumber;
-    
-    public Date(){
-    
-    }; // If no arguments were provided then default date to epoch time, which January 1st, 1970. 
+    // private attributes
+    private static final int[] LAST_DAYS = { 
+        0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+    private int mJulianNumber;
+    private int day;
+    private int month;
+    private int year;
 
-    public Date( Date date){
-    
+    // constructors
+    public Date() {
+        this.day = 01;
+        this.month = 01;
+        this.year = 1970;
+    };
+
+    /**
+     *
+     * @param date
+     */
+    public Date( Date date ) {
+        this.day = date.day;
+        this.month = date.month;
+        this.year = date.year;
     };  
 
-    public Date( int day, int month, int year){
-    
+    /**
+     *
+     * @param day
+     * @param month
+     * @param year
+     */
+    public Date( int day, int month, int year ) {
+        if(!isValidDate(day, month, year)) 
+            throw new IllegalArgumentException("Invalid Date");
+        this.day = day;
+        this.month = month;
+        this.year = year; 
     };  
 
     public int getDay(){
@@ -57,6 +82,13 @@ public class Date {
 
     private int[] fromJulianNumber(){
         
-    }; 
+    };
+    
+    private boolean isValidDate(int day, int month, int year){
+        if(day < 1 || day > LAST_DAYS[month]) return false;
+        if(month < 1 || month > 31) return false;
+        if(month == 2 && day == 29 && !isLeapYear(year)) return false;
+        return true;
+    };
 
 }
