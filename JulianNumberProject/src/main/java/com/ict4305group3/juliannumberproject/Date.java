@@ -73,7 +73,29 @@ public class Date {
     }; 
 
     public static int getLastDayOfMonth( int month, int year ){
-
+        int lastDayOfMonth;
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                lastDayOfMonth = 31;
+                break;
+            case 2:
+                if (isLeapYear(year)) {
+                    lastDayOfMonth = 29;
+                } else {
+                    lastDayOfMonth = 28;
+                }   break;
+            default:
+                lastDayOfMonth = 30;
+                break;
+        }
+        return lastDayOfMonth;
+    }
     }; 
 
     private int toJulianNumber(int day, int month, int year){
