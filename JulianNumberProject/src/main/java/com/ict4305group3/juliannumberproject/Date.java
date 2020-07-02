@@ -12,8 +12,6 @@ package com.ict4305group3.juliannumberproject;
 public class Date {
     
     // private attributes
-    private static final int[] LAST_DAYS = { 
-        0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
     private int mJulianNumber;
     private int day;
     private int month;
@@ -97,16 +95,17 @@ public class Date {
         return lastDayOfMonth;
     }; 
 
-    private int toJulianNumber(int day, int month, int year){
-    
-    }; 
-
-    private int[] fromJulianNumber(){
-        
-    };
+//    private int toJulianNumber(int day, int month, int year){
+//    
+//    }; 
+//
+//    private int[] fromJulianNumber(){
+//        
+//    };
     
     private boolean isValidDate(int day, int month, int year){
-        if(day < 1 || day > LAST_DAYS[month]) return false;
+        int lastDay = getLastDayOfMonth(month, year);
+        if(day < 1 || day > lastDay) return false;
         if(month < 1 || month > 31) return false;
         if(month == 2 && day == 29 && !isLeapYear(year)) return false;
         return true;
