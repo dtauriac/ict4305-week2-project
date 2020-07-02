@@ -95,7 +95,6 @@ public class Date {
                 break;
         }
         return lastDayOfMonth;
-    }
     }; 
 
     private int toJulianNumber(int day, int month, int year){
